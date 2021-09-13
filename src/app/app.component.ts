@@ -41,21 +41,18 @@ export class AppComponent {
   shoPsData = 0;
   subscribers = 0;
   numBs = 0;
-  rncs: number[] = [];
   numRNCs = () => {
+    let rncs: number[] = [];
     this.range = Math.pow(10, (this.loss - 137.4) / 35.2);
     this.compute();
     this.numBs = Math.ceil(this.area / this.coverage);
-    this.rncs.push(Math.ceil((Math.ceil(this.numBs) * this.antenna.frequency * this.antenna.sector)/(this.rnc.cells * this.margin1/100)))
-    this.rncs.push(Math.ceil(Math.ceil(this.numBs)/(this.rnc.baseStation * this.margin2/100)));
-    this.rncs.push(Math.ceil((this.voiceTP()+ this.csDataTp()+ this.csDataTp2()+this.PsDataTp())*this.subscribers/(this.fillrate* this.rnc.rate*10)))
-    return Math.max(...this.rncs);
+    rncs.push(Math.ceil((Math.ceil(this.numBs) * this.antenna.frequency * this.antenna.sector)/(this.rnc.cells * this.margin1/100)))
+    rncs.push(Math.ceil(Math.ceil(this.numBs)/(this.rnc.baseStation * this.margin2/100)));
+    rncs.push(Math.ceil((this.voiceTP()+ this.csDataTp()+ this.csDataTp2()+this.PsDataTp())*this.subscribers/(this.fillrate* this.rnc.rate*10)))
+    return Math.max(...rncs);
   };
 
   ngOnInit(): void {
-  }
-
-  onClick() {
   }
 
   PsDataTp() {
