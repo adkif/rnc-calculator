@@ -111,6 +111,7 @@ export class UmtsComponent implements OnInit {
   }
 
   uplink!: UpLink;
+  downlink!: DownLink;
 
   constructor() { }
 
@@ -129,18 +130,19 @@ export class UmtsComponent implements OnInit {
   }
 
   compute(){
-    let downlink = new DownLink(this.area,this.hEff, this.chargeFactor, this.interferenceFactor, this.antenna, this.servicesDl, this.chipRate,this.maximalPower,this.orthogonalityFactor, this.densityPowerNoise);
-
-    downlink.lastBss+= 20;
-    console.log(downlink.lastBss);
-    console.log(downlink.virtualTrafic());
-    console.log(downlink.lastBss);
-    console.log(downlink.channelProvided(6));
-    console.log(downlink.channelCapableProvided());
+    this.downlink = new DownLink(this.area,this.hEff, this.chargeFactor, this.interferenceFactor, this.antenna, this.servicesDl, this.chipRate,this.maximalPower,this.orthogonalityFactor, this.densityPowerNoise);
   }
 
   computeUpLink(){
     this.uplink = new UpLink(this.area,this.hEff, this.chargeFactor, this.interferenceFactor, this.antenna, this.services, this.chipRate);
+  }
+
+  increment(){
+    return this.downlink.lastBss++;
+  }
+
+  decrement(){
+    return this.downlink.lastBss--;
   }
 
 }

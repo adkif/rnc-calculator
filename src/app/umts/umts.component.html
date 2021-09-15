@@ -239,8 +239,6 @@
       <br>
       Best BSS choice: {{uplink.bestBss(erlangsCellTrafic)}}
 
-
-
     </div>
   </div>
   <div class="row">
@@ -401,6 +399,41 @@
       <div class="d-grid gap-2">
         <button type="button" name="" id="" class="btn btn-primary" (click)="compute()">Compute</button>
       </div>
+    </div>
+  </div>
+  <div class="row mt-2" *ngIf="downlink">
+    <h5>Results</h5>
+    <div col-1>
+      bss: {{downlink.lastBss}}
+      <button (click)="increment()">+</button>
+      <button (click)="decrement()">-</button>
+      <br>
+      means trafic:  <div *ngFor="let mean of downlink.meansTrafic()">
+        {{mean.service.name}}: {{mean.value}},
+        <br>
+      </div>
+      relative amplitudes:  <div *ngFor="let amplitude of downlink.relativeAmplitudes()">
+        {{amplitude.service.name}}: {{amplitude.value}},
+        <br>
+      </div>
+      mean: {{downlink.mean()}}
+      <!-- <br>
+      variance: {{uplink.variance()}}
+      <br>
+      capacity factor: {{uplink.capacityFactor()}}
+      <br>
+      virtual trafic: {{uplink.virtualTrafic()}}
+      <br>
+      vocal lines: {{uplink.lines()}}
+      <br>
+      cell capacity: {{uplink.cellCapacity()}} lines
+      <br>
+      number of cells: <input type="text" [(ngModel)]="erlangsCellTrafic" placeholder="Check erlang B table"> -> {{uplink.cells(erlangsCellTrafic)}}
+      <br>
+      Bss depend cells/sector/frequency: {{uplink.bssCells(erlangsCellTrafic)}}
+      <br>
+      Best BSS choice: {{uplink.bestBss(erlangsCellTrafic)}} -->
+
     </div>
   </div>
 </div>
