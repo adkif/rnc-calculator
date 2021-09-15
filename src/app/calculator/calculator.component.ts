@@ -17,32 +17,32 @@ export class CalculatorComponent implements OnInit {
   range: number = 0;
   baseStation: number = 0;
   rnc: IRnc = {
-    cells: 0,
-    baseStation: 0,
-    rate: 0,
+    cells: 1152,
+    baseStation: 384,
+    rate: 196,
   };
   antenna: IAntenna = {
-    frequency: 0,
-    sector: 0,
+    frequency: 2,
+    sector: 3,
   };
-  area: number = 0;
-  loss: any = 0;
-  margin1  = 100;
-  margin2 = 100;
-  fillrate = 100;
-  voiceErl = 0
-  bitRateVoice = 0;
-  shoVoice = 0;
-  csDataErl = 0;
-  bitRateCsData=0;
-  shoCsData = 0;
-  csDataErl2 = 0;
-  bitRateCsData2=0;
-  shoCsData2 = 0;
-  avePsDataErl = 0;
-  psOverhead = 1;
-  shoPsData = 0;
-  subscribers = 0;
+  area: number = 40;
+  loss = 120;
+  margin1  = 90;
+  margin2 = 92;
+  fillrate = 90;
+  voiceErl = 0.025
+  bitRateVoice = 16;
+  shoVoice = 30;
+  csDataErl = 0.01;
+  bitRateCsData=32;
+  shoCsData = 30;
+  csDataErl2 = 0.005;
+  bitRateCsData2=64;
+  shoCsData2 = 30;
+  avePsDataErl = 0.2;
+  psOverhead = 15;
+  shoPsData = 30;
+  subscribers = 350000;
   numBs = 0;
   numRNCs = () => {
     let rncs: number[] = [];

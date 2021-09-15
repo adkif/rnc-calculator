@@ -426,7 +426,8 @@
       <br>
       number of cells capable provided: {{downlink.channelCapableProvided()}}
       <br>
-      bss: {{downlink.lastBss}}
+      bss: <span *ngIf="downlink.channelCapableProvided() > downlink.channelProvided(erlangsCellTraficDl)" class="btn btn-success" role="alert">{{downlink.lastBss}}</span>
+          <span *ngIf="downlink.channelCapableProvided() < downlink.channelProvided(erlangsCellTraficDl)" class="btn btn-danger" role="alert">{{downlink.lastBss}}</span>
       <button (click)="increment()">+</button>
       <button (click)="decrement()">-</button>
       <br>

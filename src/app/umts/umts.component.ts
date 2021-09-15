@@ -111,6 +111,8 @@ export class UmtsComponent implements OnInit {
     maximumAttenuationPropagation : 125.34
   }
 
+  bss = 0;
+
   uplink!: UpLink;
   downlink!: DownLink;
 
@@ -132,6 +134,7 @@ export class UmtsComponent implements OnInit {
 
   compute(){
     this.downlink = new DownLink(this.area,this.hEff, this.chargeFactor, this.interferenceFactor, this.antenna, this.servicesDl, this.chipRate,this.maximalPower,this.orthogonalityFactor, this.densityPowerNoise);
+     this.downlink.lastBss = this.uplink.bestBss(this.erlangsCellTrafic);
   }
 
   computeUpLink(){
