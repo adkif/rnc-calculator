@@ -424,12 +424,9 @@
       <br>
       virtual trafic: {{downlink.virtualTrafic()}}
       <br>
-      number of cells provided: <input type="text" [(ngModel)]="erlangsCellTraficDl" placeholder="Check erlang B table"> -> {{uplink.cells(erlangsCellTrafic)}}
+      number of cells provided: <input type="text" [(ngModel)]="erlangsCellTraficDl" placeholder="Check erlang B table"> -> {{downlink.channelProvided(erlangsCellTraficDl)}}
       <br>
-      Bss depend cells/sector/frequency: {{uplink.bssCells(erlangsCellTraficDl)}}
-      <br>
-      Best BSS choice: {{uplink.bestBss(erlangsCellTrafic)}}
-
+      number of cells capable provided: {{downlink.channelCapableProvided()}}
     </div>
   </div>
 </div>
