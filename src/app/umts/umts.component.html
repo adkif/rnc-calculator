@@ -9,14 +9,25 @@
       </div>
     </div>
     <div class="col-md-2">
-      <div class="input-group input-group-sm mb-3">
-        <select class="form-select" aria-label="Default select example" [(ngModel)]="antenna.sector">
-          <option selected>Type</option>
-          <option [ngValue]="1">Omni</option>
-          <option [ngValue]="2">2 Sectors</option>
-          <option [ngValue]="3">3 Sectors</option>
-          <option [ngValue]="6">6 Sectors</option>
-        </select>
+      <div class="row">
+        <div class="col-6">
+          <div class="input-group input-group-sm mb-3">
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="antenna.sector">
+              <option selected>Type</option>
+              <option [ngValue]="1">Omni</option>
+              <option [ngValue]="2">2 Sectors</option>
+              <option [ngValue]="3">3 Sectors</option>
+              <option [ngValue]="6">6 Sectors</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">freq</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-sm" [(ngModel)]="antenna.frequency" placeholder="area in kilometers" />
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-md-2">
