@@ -405,8 +405,6 @@
     <h5>Results</h5>
     <div col-1>
       bss: {{downlink.lastBss}}
-      <button (click)="increment()">+</button>
-      <button (click)="decrement()">-</button>
       <br>
       means trafic:  <div *ngFor="let mean of downlink.meansTrafic()">
         {{mean.service.name}}: {{mean.value}},
@@ -427,6 +425,11 @@
       number of cells provided: <input type="text" [(ngModel)]="erlangsCellTraficDl" placeholder="Check erlang B table"> -> {{downlink.channelProvided(erlangsCellTraficDl)}}
       <br>
       number of cells capable provided: {{downlink.channelCapableProvided()}}
+      <br>
+      bss: {{downlink.lastBss}}
+      <button (click)="increment()">+</button>
+      <button (click)="decrement()">-</button>
+      <br>
     </div>
   </div>
 </div>
