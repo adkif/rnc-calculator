@@ -1,1 +1,18 @@
-<p>about-us works!</p>
+<div class="container">
+  <div class="row">
+    <h2>About Us</h2>
+   <div class="col-md-4">
+    <p style="text-align: justify;
+    text-justify: inter-word;">We are terminal students of Electrical and Computer Engineering who, as part of a telecommunication course, decided to build this application in less than 24 hours. Enjoy it!</p>
+   </div>
+  </div>
+  <div class="row">
+    <h2>Team</h2>
+    <div class="col-sm-2" *ngFor="let teamMate of team">
+      <div>
+        <img class="col-12" src="https://avatars.dicebear.com/api/{{teamMate.sprite}}/{{teamMate.name}}.svg" alt="">
+        <div class="btn btn-outline-success col-12"> {{teamMate.name}}</div>
+      </div>
+    </div>
+  </div>
+</div>
