@@ -417,22 +417,18 @@
         <br>
       </div>
       mean: {{downlink.mean()}}
-      <!-- <br>
-      variance: {{uplink.variance()}}
       <br>
-      capacity factor: {{uplink.capacityFactor()}}
+      variance: {{downlink.variance()}}
       <br>
-      virtual trafic: {{uplink.virtualTrafic()}}
+      capacity factor: {{downlink.capacityFactor()}}
       <br>
-      vocal lines: {{uplink.lines()}}
+      virtual trafic: {{downlink.virtualTrafic()}}
       <br>
-      cell capacity: {{uplink.cellCapacity()}} lines
+      number of cells provided: <input type="text" [(ngModel)]="erlangsCellTraficDl" placeholder="Check erlang B table"> -> {{uplink.cells(erlangsCellTrafic)}}
       <br>
-      number of cells: <input type="text" [(ngModel)]="erlangsCellTrafic" placeholder="Check erlang B table"> -> {{uplink.cells(erlangsCellTrafic)}}
+      Bss depend cells/sector/frequency: {{uplink.bssCells(erlangsCellTraficDl)}}
       <br>
-      Bss depend cells/sector/frequency: {{uplink.bssCells(erlangsCellTrafic)}}
-      <br>
-      Best BSS choice: {{uplink.bestBss(erlangsCellTrafic)}} -->
+      Best BSS choice: {{uplink.bestBss(erlangsCellTrafic)}}
 
     </div>
   </div>
